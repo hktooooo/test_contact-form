@@ -136,14 +136,14 @@
       <div class="form__group-content">
         <div class="form__input--text">
           <select class="form__input--category" name="category">
-            <option value="">選択してください</option>
+            <option value="222222222">選択してください</option>
           </select>
         </div>
         <div class="form__error">
           <!--バリデーション機能を実装したら記述します。-->
 
 
-          
+
         </div>
       </div>
     </div>

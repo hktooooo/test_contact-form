@@ -1,7 +1,31 @@
+/*@font-face {
+     font-family: "Alphabet";
+    src: url(https://somewebsite.com/path/to/font.woff);
+    unicode-range: U+0041-005A, U+0061-007A; 
+    ---------------A-Z, a-z
+}
+
+@font-face {
+    font-family: "Alphabet";
+    src: local("Tahoma Bold");
+    font-weight: bold;
+    unicode-range: U+0041-005A, U+0061-007A;
+    --------------A-Z, a-z
+}
+*/
+
+body {
+    background: #fff;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 .header {
     background: #fff;
     text-align: center;
     border-bottom: solid 1px #8B7969;
+    font-family: "Inika", serif;
 }
 
 .header__inner {
