@@ -19,8 +19,10 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <input type="text" name="name" placeholder="テスト太郎" value="{{ old('name') }}" />
-          <input type="text" name="name" placeholder="テスト太郎" value="{{ old('name') }}" />
+          <div class="form__input--name">
+            <input type="text" name="name__last" placeholder="例: 山田" value="{{ old('name__last') }}" />
+            <input type="text" name="name__first" placeholder="例: 太郎" value="{{ old('name__first') }}" />
+          </div>
         </div>
         <div class="form__error">
           <!--バリデーション機能を実装したら記述します。-->
@@ -75,8 +77,12 @@
         <span class="form__label--required">※</span>
       </div>
       <div class="form__group-content">
-        <div class="form__input--text">
-          <input type="tel" name="tel" placeholder="09012345678" value="{{ old('tel') }}" />
+        <div class="form__input--text form__input--tel">
+          <input type="tel" name="tel__first" placeholder="080" value="{{ old('tel__first') }}" />
+          <p>-</p>
+          <input type="tel" name="tel__second" placeholder="1234" value="{{ old('tel__second') }}" />
+          <p>-</p>
+          <input type="tel" name="tel__third" placeholder="5678" value="{{ old('tel__third') }}" />
         </div>
         <div class="form__error">
           <!--バリデーション機能を実装したら記述します。-->

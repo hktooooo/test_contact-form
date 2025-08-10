@@ -5,7 +5,7 @@
 .contact-form__content {
     margin: 0 auto;
     padding: 30px 15px;
-    max-width: 972px;
+    width: 963px;
 }
 
 .contact-form__heading {
@@ -22,8 +22,15 @@
 
 .form__group {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     margin-bottom: 15px;
+    border: solid 2px red;
+}
+
+.form__group-title {
+    width: 300px;
+    text-align: left;
+    margin-right: 10px;
 }
 
 .form__label--item {
@@ -38,28 +45,74 @@
     color: #FF9494;
 }
 
+.form__group-content {
+    color: #8B7969;
+}
+
 .form__error {
     height: 20px;
     color: #ff0000;
     text-align: left;
 }
 
+.form__input--text .form__input--textarea {
+    width: 619px;
+}
+
 .form__input--text input,
 .form__input--textarea textarea {
     padding: 10px;
-    width: 600px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-
+    width: 619px;
     appearance: none;
+    height: 38px;
+    background-color: #F4F4F4;
+    font-size: 14px;
+    border: none;
 }
 
-.form__input--text input {
-    height: 40px;
+.form__input--name {
+    display: flex;
+    justify-content: space-between;
+    width: 619px;
+}
+
+.form__input--name input {
+    width: 287px;
+    display: block;
+    background-color: #F4F4F4;
+    height: 38px;
+    font-size: 14px;
+}
+
+input::placeholder {
+    color: #BEB1A6;
+}
+
+.form__input--tel {
+    display: flex;
+    justify-content: space-between;
+    width: 619px;
+}
+
+.form__input--tel input {
+    width: 178px;
+    display: block;
+    background-color: #F4F4F4;
+    height: 38px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.form__input--tel p {
+    font-size: 20px;
+    color: #8B7969;
+    text-align: center;
+    border: #ff0000 solid 1px;
+    padding-top: 0px;
 }
 
 .form__input--textarea textarea {
-    height: 180px;
+    height: 129px;
 }
 
 .form__button {
@@ -67,12 +120,12 @@
 }
 
 .form__button-submit {
-    padding: 10px;
-    width: 30%;
-    height: 50px;
+    width: 160px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 20px;
     border: none;
-    border-radius: 3px;
-    background: #000;
+    background: #82756A;
     color: #fff;
     cursor: pointer;
 }
