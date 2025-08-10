@@ -23,8 +23,9 @@
       <nav>
         <ul class="header-nav">
           <li class="header-nav__item">
-            <a class="header-nav__link" href="/*">**</a>
-            <a class="header-nav__link" href="/*">**</a>
+            <a class="header-nav__link-register" href="/register">register</a>
+            <a class="header-nav__link-login" href="/login">login</a>
+            <a class="header-nav__link-logout" href="/login">logout</a>
           </li>
         </ul>
       </nav>
