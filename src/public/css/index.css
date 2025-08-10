@@ -1,17 +1,22 @@
+.header-nav {
+    display: none;
+}
+
 .contact-form__content {
     margin: 0 auto;
     padding: 30px 15px;
-    max-width: 1230px;
+    max-width: 972px;
 }
 
 .contact-form__heading {
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     text-align: center;
+    color: #8B7969;
 }
 
 .form {
     margin: 0 auto;
-    width: 70%;
+    width: 100%;
     text-align: center;
 }
 
@@ -21,12 +26,16 @@
     margin-bottom: 15px;
 }
 
+.form__label--item {
+    font-size: 20px;
+    color: #8B7969;
+}
+
 .form__label--required {
     margin-left: 5px;
     padding: 4px 6px;
-    border-radius: 3px;
-    background: #fafafa;
-    color: #aaa;
+    font-size: 20px;
+    color: #FF9494;
 }
 
 .form__error {

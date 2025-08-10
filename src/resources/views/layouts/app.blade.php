@@ -15,8 +15,16 @@
   <header class="header">
     <div class="header__inner">
       <a class="header__logo" href="/">
-        Contact Form
+        FashionablyLate
       </a>
+      <nav>
+        <ul class="header-nav">
+          <li class="header-nav__item">
+            <a class="header-nav__link" href="/*">**</a>
+            <a class="header-nav__link" href="/*">**</a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </header>
 

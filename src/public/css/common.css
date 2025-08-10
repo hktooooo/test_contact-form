@@ -1,5 +1,7 @@
 .header {
-    background: #000;
+    background: #fff;
+    text-align: center;
+    border-bottom: solid 1px #8B7969;
 }
 
 .header__inner {
@@ -9,8 +11,7 @@
 }
 
 .header__logo {
-    color: #fff;
+    color: #8B7969;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 24px;
+    font-size: 40px;
 }
