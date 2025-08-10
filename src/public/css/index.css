@@ -88,6 +88,16 @@ input::placeholder {
     color: #BEB1A6;
 }
 
+.form__input--radio label {
+    display: inline-block;
+    margin-right: 55px;
+}
+
+.form__input--radio input {
+    transform: scale(1.5);
+    padding-left: 10px;
+}
+
 .form__input--tel {
     display: flex;
     justify-content: space-between;
@@ -105,10 +115,16 @@ input::placeholder {
 
 .form__input--tel p {
     font-size: 20px;
-    color: #8B7969;
     text-align: center;
     border: #ff0000 solid 1px;
     padding-top: 0px;
+}
+
+.form__input--category {
+    border: none;
+    width: 320px;
+    background-color: #F4F4F4;
+    height: 38px;
 }
 
 .form__input--textarea textarea {

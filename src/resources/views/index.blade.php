@@ -9,7 +9,7 @@
   <div class="contact-form__heading">
     <h2>Contact</h2>
   </div>
-  <form class="form" action="/contacts/confirm" method="post">
+  <form class="form" action="/confirm" method="post">
   @csrf
     <!-- 名前 -->
     <div class="form__group">
@@ -20,15 +20,15 @@
       <div class="form__group-content">
         <div class="form__input--text">
           <div class="form__input--name">
-            <input type="text" name="name__last" placeholder="例: 山田" value="{{ old('name__last') }}" />
-            <input type="text" name="name__first" placeholder="例: 太郎" value="{{ old('name__first') }}" />
+            <input type="text" name="last_name" placeholder="例: 山田" value="{{ old('last_name') }}" />
+            <input type="text" name="first_name" placeholder="例: 太郎" value="{{ old('first_name') }}" />
           </div>
         </div>
         <div class="form__error">
           <!--バリデーション機能を実装したら記述します。-->
-          @error('name')
-          {{ $message }}
-          @enderror
+
+
+
         </div>
       </div>
     </div>
@@ -39,16 +39,22 @@
         <span class="form__label--required">※</span>
       </div>
       <div class="form__group-content">
-        <div class="form__input--text++++++++++++">
-          <input type="radio" name="sex" value="男性">男性
-          <input type="radio" name="sex" value="女性">女性
-          <input type="radio" name="sex" value="その他">その他
+        <div class="form__input--radio">
+          <label>
+            <input type="radio" name="gender" value=1>男性
+          </label>
+          <label>
+            <input type="radio" name="gender" value=2>女性
+          </label>
+          <label>
+            <input type="radio" name="gender" value=3>その他
+          </label>
         </div>
         <div class="form__error">
           <!--バリデーション機能を実装したら記述します。-->
-          @error('name')
-          {{ $message }}
-          @enderror
+
+
+
         </div>
       </div>
     </div>
@@ -64,9 +70,9 @@
         </div>
         <div class="form__error">
           <!--バリデーション機能を実装したら記述します。-->
-          @error('email')
-          {{ $message }}
-          @enderror
+
+
+
         </div>
       </div>
     </div>
@@ -78,17 +84,17 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--text form__input--tel">
-          <input type="tel" name="tel__first" placeholder="080" value="{{ old('tel__first') }}" />
+          <input type="tel" name="tel_first" placeholder="080" value="{{ old('tel_first') }}" />
           <p>-</p>
-          <input type="tel" name="tel__second" placeholder="1234" value="{{ old('tel__second') }}" />
+          <input type="tel" name="tel_second" placeholder="1234" value="{{ old('tel_second') }}" />
           <p>-</p>
-          <input type="tel" name="tel__third" placeholder="5678" value="{{ old('tel__third') }}" />
+          <input type="tel" name="tel_third" placeholder="5678" value="{{ old('tel_third') }}" />
         </div>
         <div class="form__error">
           <!--バリデーション機能を実装したら記述します。-->
-          @error('tel')
-          {{ $message }}
-          @enderror
+
+
+
         </div>
       </div>
     </div>
@@ -104,9 +110,9 @@
         </div>
         <div class="form__error">
           <!--バリデーション機能を実装したら記述します。-->
-          @error('address')
-          {{ $message }}
-          @enderror
+
+
+
         </div>
       </div>
     </div>
@@ -117,7 +123,7 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <input type="tel" name="tel" placeholder="例: 千駄ヶ谷マンション101" value="{{ old('tel') }}" />
+          <input type="building" name="building" placeholder="例: 千駄ヶ谷マンション101" value="{{ old('building') }}" />
         </div>
       </div>
     </div>
@@ -128,16 +134,16 @@
         <span class="form__label--required">※</span>
       </div>
       <div class="form__group-content">
-        <div class="form__input--text=============">
-          <select name="category">
+        <div class="form__input--text">
+          <select class="form__input--category" name="category">
             <option value="">選択してください</option>
           </select>
         </div>
         <div class="form__error">
           <!--バリデーション機能を実装したら記述します。-->
-          @error('tel')
-          {{ $message }}
-          @enderror
+
+
+          
         </div>
       </div>
     </div>
@@ -148,7 +154,7 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--textarea">
-          <textarea name="content" placeholder="お問い合わせ内容をご記載ください"></textarea>
+          <textarea name="detail" placeholder="お問い合わせ内容をご記載ください"></textarea>
         </div>
       </div>
     </div>
