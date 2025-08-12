@@ -21,9 +21,7 @@
       <select class="search-form__item-select-category">
         <option value="">お問い合わせの種類</option>
       </select>
-      <select class="search-form__item-select-date">
-        <option value="">年/月/日</option>
-      </select>
+      <input type="date" class="search-form__item-select-date">
     </div>
     <div class="search-form__button">
       <button class="search-form__button-submit" type="submit">検索</button>
@@ -73,7 +71,7 @@
           @endswitch
         </td>
         <td class="admin-table__item">{{ $contact['email'] }}</td>    
-        <td class="admin-table__item">商品の交換について</td> 
+        <td class="admin-table__item">{{ $contact->getContent() }}</td> 
         <td>
           <div class="admin-form__button">
             <button class="update-form__button-detail" type="submit">

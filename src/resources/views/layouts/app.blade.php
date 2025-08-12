@@ -25,7 +25,12 @@
           <li class="header-nav__item">
             <a class="header-nav__link-register" href="/register">register</a>
             <a class="header-nav__link-login" href="/login">login</a>
-            <a class="header-nav__link-logout" href="/login">logout</a>
+            @if (Auth::check())
+            <form action="/logout" method="post">
+              @csrf
+              <button class="header-nav__link-logout">logout</button>
+            </form>
+            @endif
           </li>
         </ul>
       </nav>

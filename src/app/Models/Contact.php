@@ -21,8 +21,12 @@ class Contact extends Model
         'detail'
     ];
 
+    public function getContent(){
+        return optional($this->category)->content;
+    }
+
     public function category()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo('App\Models\Category');
     }
 }

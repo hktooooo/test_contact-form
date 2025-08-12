@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Models\User;
+use App\Models\Category;
 
 class AdminController extends Controller
 {
@@ -12,29 +13,13 @@ class AdminController extends Controller
     public function admin()
     {
         $contacts = Contact::all();
+        $categories = Category::all();
     
-        return view('admin', compact('contacts'));
+        return view('admin', compact('contacts', 'categories'));
     }
 
     public function register()
     {
         return view('register');
-    }
-
-    public function store(Request $request)
-    {
-        $user = $request->only([
-            'name',
-            'email',
-            'password'
-        ]);
-        User::create($user);
-
-        return redirect('/register');
-    }
-
-    public function login()
-    {
-        return view('login');
     }
 }

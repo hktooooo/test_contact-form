@@ -9,7 +9,7 @@
   <div class="register__heading">
     <h2>Register</h2>
   </div>
-  <form class="form" action="/register/add" method="post">
+  <form class="form" action="/register" method="post">
   @csrf
     <!-- 名前 -->
     <div class="form__group">
@@ -21,15 +21,13 @@
           <input type="text" name="name" placeholder="例: 山田　太郎" value="{{ old('name') }}" />
         </div>
         <div class="form__error">
-          <!--バリデーション機能を実装したら記述します。-->
-
-
-
+          <!-- バリデーション機能 -->
+          @error('name')
+            {{ $message }}
+          @enderror     
         </div>
       </div>
     </div>
-
-
     <!-- メールアドレス -->
     <div class="form__group">
       <div class="form__group-title">
@@ -37,13 +35,13 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <input type="text" name="email" placeholder="例: test@example.com" value="{{ old('email') }}" />
+          <input type="email" name="email" placeholder="例: test@example.com" value="{{ old('email') }}" />
         </div>
         <div class="form__error">
-          <!--バリデーション機能を実装したら記述します。-->
-
-
-
+          <!-- バリデーション機能 -->
+          @error('email')
+            {{ $message }}
+          @enderror
         </div>
       </div>
     </div>
@@ -57,10 +55,10 @@
           <input type="password" name="password" placeholder="例: coachtech1106" value="{{ old('password') }}" />
         </div>
         <div class="form__error">
-          <!--バリデーション機能を実装したら記述します。-->
-
-
-
+          <!-- バリデーション機能 -->
+          @error('password')
+            {{ $message }}
+          @enderror
         </div>
       </div>
     </div>
