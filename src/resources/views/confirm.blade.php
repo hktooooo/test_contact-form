@@ -1,3 +1,5 @@
+@dump($content)
+
 @extends('layouts.app')
 
 @section('css')
@@ -67,7 +69,7 @@
           <th class="confirm-table__header">お問い合わせの種類</th>
           <td class="confirm-table__text">
             <input type="hidden" name="category_id" value="{{ $category_id }}" />
-            {{ $content }}
+              {{ $content }}
           </td>
         </tr>
         <tr class="confirm-table__row">

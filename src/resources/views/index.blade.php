@@ -135,9 +135,10 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <input type="hidden" name="category_id"  value=55 />
-          <select class="form__input--category" name="content">
-            <option value="222222222">選択してください</option>
+          <select class="form__input--category" name="category_id">
+            @foreach ($categories as $category)
+              <option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
+            @endforeach
           </select>
         </div>
         <div class="form__error">

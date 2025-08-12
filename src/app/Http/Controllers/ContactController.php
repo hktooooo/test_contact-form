@@ -5,13 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
+use App\Models\Category;
 
 class ContactController extends Controller
 {
     //
     public function index()
     {
-        return view('index');
+        // お問い合わせの種類 一覧取得
+        $categories = Category::all();
+        
+        return view('index', compact('categories'));
     }
 
     // public function confirm()
@@ -37,12 +41,15 @@ class ContactController extends Controller
             'tel_third',
             'address',
             'building',
-            'content',
             'detail'
         ]);
 
         // 電話番号の結合処理
         $tel = $contact['tel_first'] . $contact['tel_second'] . $contact['tel_third'];
+
+        // お問い合わせの種類 対応データ取得
+        $categories = Category::all();
+        $category = $categories->firstWhere('id', $contact['category_id']);
 
         return view('confirm', [
             'category_id' => $contact['category_id'],
@@ -53,8 +60,8 @@ class ContactController extends Controller
             'tel' => $tel,
             'address' => $contact['address'],
             'building' => $contact['building'],
-            'content' => $contact['content'],
             'detail' => $contact['detail'],
+            'content' => $category['content']
         ]);
     }
 
