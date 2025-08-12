@@ -9,7 +9,7 @@
   <div class="register__heading">
     <h2>Register</h2>
   </div>
-  <form class="form" action="/confirm" method="post">
+  <form class="form" action="/register/add" method="post">
   @csrf
     <!-- 名前 -->
     <div class="form__group">

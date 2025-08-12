@@ -54,11 +54,25 @@
         <th class="admin-table__header">お問い合わせの種類</th>
         <th class="admin-table__header"></th>
       </tr>
+      @foreach ($contacts as $contact)
       <tr class="admin-table__row">
         <td class="admin-table__item"></td>
-        <td class="admin-table__item">山田　太郎</td>
-        <td class="admin-table__item">男性</td>
-        <td class="admin-table__item">test@example.com</td>    
+        <td class="admin-table__item">{{ $contact['first_name'] }}</td>
+        <td class="admin-table__item">
+          @switch( $contact['gender'] )
+            @case(1)
+              男性
+              @break
+            @case(2)
+              女性
+              @break
+            @case(3)
+              その他
+              @break
+            @default
+          @endswitch
+        </td>
+        <td class="admin-table__item">{{ $contact['email'] }}</td>    
         <td class="admin-table__item">商品の交換について</td> 
         <td>
           <div class="admin-form__button">
@@ -68,104 +82,7 @@
           </div>
         <td>
       </tr>
-      <tr class="admin-table__row">
-        <td class="admin-table__item"></td>
-        <td class="admin-table__item">山田　太郎</td>
-        <td class="admin-table__item">男性</td>
-        <td class="admin-table__item">test@example.com</td>    
-        <td class="admin-table__item">商品の交換について</td> 
-        <td>
-          <div class="admin-form__button">
-            <button class="update-form__button-detail" type="submit">
-              詳細     
-            </button>
-          </div>
-        <td>
-      </tr>
-      <tr class="admin-table__row">
-        <td class="admin-table__item"></td>
-        <td class="admin-table__item">山田　太郎</td>
-        <td class="admin-table__item">男性</td>
-        <td class="admin-table__item">test@example.com</td>    
-        <td class="admin-table__item">商品の交換について</td> 
-        <td>
-          <div class="admin-form__button">
-            <button class="update-form__button-detail" type="submit">
-              詳細     
-            </button>
-          </div>
-        <td>
-      </tr>
-      <tr class="admin-table__row">
-        <td class="admin-table__item"></td>
-        <td class="admin-table__item">山田　太郎</td>
-        <td class="admin-table__item">男性</td>
-        <td class="admin-table__item">test@example.com</td>    
-        <td class="admin-table__item">商品の交換について</td> 
-        <td>
-          <div class="admin-form__button">
-            <button class="update-form__button-detail" type="submit">
-              詳細     
-            </button>
-          </div>
-        <td>
-      </tr>
-      <tr class="admin-table__row">
-        <td class="admin-table__item"></td>
-        <td class="admin-table__item">山田　太郎</td>
-        <td class="admin-table__item">男性</td>
-        <td class="admin-table__item">test@example.com</td>    
-        <td class="admin-table__item">商品の交換について</td> 
-        <td>
-          <div class="admin-form__button">
-            <button class="update-form__button-detail" type="submit">
-              詳細     
-            </button>
-          </div>
-        <td>
-      </tr>
-      <tr class="admin-table__row">
-        <td class="admin-table__item"></td>
-        <td class="admin-table__item">山田　太郎</td>
-        <td class="admin-table__item">男性</td>
-        <td class="admin-table__item">test@example.com</td>    
-        <td class="admin-table__item">商品の交換について</td> 
-        <td>
-          <div class="admin-form__button">
-            <button class="update-form__button-detail" type="submit">
-              詳細     
-            </button>
-          </div>
-        <td>
-      </tr>
-      <tr class="admin-table__row">
-        <td class="admin-table__item"></td>
-        <td class="admin-table__item">山田　太郎</td>
-        <td class="admin-table__item">男性</td>
-        <td class="admin-table__item">test@example.com</td>    
-        <td class="admin-table__item">商品の交換について</td> 
-        <td>
-          <div class="admin-form__button">
-            <button class="update-form__button-detail" type="submit">
-              詳細     
-            </button>
-          </div>
-        <td>
-      </tr>
-      <tr class="admin-table__row">
-        <td class="admin-table__item"></td>
-        <td class="admin-table__item">山田　太郎</td>
-        <td class="admin-table__item">男性</td>
-        <td class="admin-table__item">test@example.com</td>    
-        <td class="admin-table__item">商品の交換について</td> 
-        <td>
-          <div class="admin-form__button">
-            <button class="update-form__button-detail" type="submit">
-              詳細     
-            </button>
-          </div>
-        <td>
-      </tr>
+      @endforeach
     </table>
   </div>
 </div>
