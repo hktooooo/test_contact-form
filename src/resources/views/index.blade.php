@@ -123,7 +123,7 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <input type="building" name="building" placeholder="例: 千駄ヶ谷マンション101" value="{{ old('building') }}" />
+          <input type="text" name="building" placeholder="例: 千駄ヶ谷マンション101" value="{{ old('building') }}" />
         </div>
       </div>
     </div>
@@ -135,7 +135,8 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <select class="form__input--category" name="category">
+          <input type="hidden" name="category_id"  value=55 />
+          <select class="form__input--category" name="content">
             <option value="222222222">選択してください</option>
           </select>
         </div>
