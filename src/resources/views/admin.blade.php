@@ -42,7 +42,7 @@
 
   </form>
 
-  
+
   <!-- エクスポートとページ送り -->
   <div class="admin__additional__features">
     <div class="additional__features__button">
@@ -94,6 +94,9 @@
       </tr>
       @endforeach
     </table>
+    <div class="additional__features-pagination_1">
+      {{ $contacts->links('vendor.pagination.custom') }}
+    </div>
   </div>
 </div>
 @endsection

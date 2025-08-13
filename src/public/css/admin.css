@@ -219,3 +219,10 @@ input::placeholder {
     font-size: 18px;
     cursor: pointer;
 }
+
+.additional__features-pagination_1 {
+    height: 50px;
+    width: 219px;
+    box-sizing: border-box;
+    border: red solid 1px;
+}

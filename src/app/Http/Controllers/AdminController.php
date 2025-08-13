@@ -12,7 +12,7 @@ class AdminController extends Controller
     //
     public function admin()
     {
-        $contacts = Contact::all();
+        $contacts = Contact::Paginate(7);
         $categories = Category::all();
     
         return view('admin', compact('contacts', 'categories'));
