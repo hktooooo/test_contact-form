@@ -32,22 +32,29 @@
     <div class="search-form__button">
       <button class="search-form__button-submit" type="submit">検索</button>
     </div>
-    <div class="search-form__button">
-      <button class="search-form__button-reset" type="submit">リセット</button>
-    </div>
   </form>
 
   <form class="search-form" action="/admin/search" method="get">
   @csrf
-
+      <input type="hidden" name="name_email" value="">
+      <input type="hidden" name="gender" value="">
+      <input type="hidden" name="category_id" value="">
+      <input type="hidden" name="date" value="">
+      <div class="search-form__button">
+        <button class="search-form__button-reset" type="submit">リセット</button>
+      </div>
   </form>
 
 
   <!-- エクスポートとページ送り -->
   <div class="admin__additional__features">
-    <div class="additional__features__button">
+    <form method="get" class="additional__features__button" action="{{ route('users.export') }}">
+      <input type="hidden" name="name_email" value="{{ old('name_email', $name_email ??'') }}">
+      <input type="hidden" name="gender" value="{{ old('gender', $gender ??'') }}">
+      <input type="hidden" name="category_id" value="{{ old('category_id', $category_id ??'') }}">
+      <input type="hidden" name="date" value="{{ old('date', $date ??'') }}">
       <button class="additional__features-export" type="submit">エクスポート</button>
-    </div>
+    </form>
     <div class="additional__features-pagination">
       <p>123456</p>
     </div>
@@ -86,8 +93,8 @@
         <td class="admin-table__item">{{ $contact->getContent() }}</td> 
         <td>
           <div class="admin-form__button">
-            <button class="update-form__button-detail" type="submit">
-              詳細     
+            <button wire:click="$emit('openModal')">
+              詳細
             </button>
           </div>
         <td>
@@ -98,5 +105,7 @@
       {{ $contacts->links('vendor.pagination.custom') }}
     </div>
   </div>
+  @livewire('modal')
+
 </div>
 @endsection
