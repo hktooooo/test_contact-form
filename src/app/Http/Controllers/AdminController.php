@@ -18,8 +18,19 @@ class AdminController extends Controller
         return view('admin', compact('contacts', 'categories'));
     }
 
-    public function register()
+    public function search(Request $request)
     {
-        return view('register');
+
+        // フォームからの入力を取得
+        $name_email = $request->input('name_email');
+        $gender     = $request->input('gender');
+        $category_id = $request->input('category_id');   
+        $date       = $request->input('date');
+
+        // 検索実行
+        $contacts = Contact::with('category')->KeywordSearch($name_email, $gender, $category_id, $date)->get();
+        $categories = Category::all();
+
+        return view('admin', compact('contacts', 'categories'));
     }
 }
