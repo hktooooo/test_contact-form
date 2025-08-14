@@ -2,6 +2,13 @@ body {
     background-color: #F1ECE7;
 }
 
+.header-nav__link-register {
+    display: block;
+    width: 100px;
+    height: 34px;
+    line-height: 34px;
+}
+
 .header-nav__link-login {
     display: none;
 }
@@ -10,7 +17,7 @@ body {
     display: none;
 }
 
-.login__heading {
+.login__heading h2 {
     margin-top: 56px;
     margin-bottom: 56px;
     height: 46px;
@@ -30,6 +37,7 @@ body {
     border: solid 1px #C5B9B0;
     box-sizing: border-box;
     background-color: #FFFFFF;
+    border-radius: 10px;
 }
 
 .form__group {
@@ -68,12 +76,19 @@ body {
     appearance: none;
     height: 50px;
     background-color: #F4F4F4;
-    font-size: 14px;
+    font-size: 16px;
     border: none;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #8B7969;
+    padding-left: 14px;
 }
 
 input::placeholder {
     color: #BEB1A6;
+    padding-left: 14px;
+    font-size: 14px;
 }
 
 .form__button {

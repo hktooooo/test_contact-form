@@ -26,6 +26,7 @@ body {
     text-align: center;
     border-bottom: solid 1px #E0DFDE;
     font-family: "Inika", serif;
+    font-weight: 400;
 }
 
 .header__inner {

@@ -28,7 +28,7 @@ class ContactController extends Controller
     //     return view('thanks');
     // }
 
-    public function confirm(Request $request)
+    public function confirm(ContactRequest $request)
     {
         // 入力値の取得
         $contact = $request->only([

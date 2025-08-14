@@ -47,7 +47,7 @@
       <button class="additional__features-export" type="submit">エクスポート</button>
     </form>
     <div class="additional__features-pagination">
-      <p>123456</p>
+      {{ $contacts->links('vendor.pagination.custom') }}
     </div>
   </div>
 
@@ -99,12 +99,68 @@
     <!-- モーダル表示 -->
     @if($showModal)
         <div class="modal-overlay">
-            <div class="modal-content">
-                <h2>モーダルタイトル</h2>
-                <p>{{ $contactId }}</p>
-                <p>名前: {{ $contact_['first_name'] }}</p>
-                <button wire:click="closeModal" class="close-button">閉じる</button>
-            </div>
-        </div>
+          <div class="modal-content">
+            <button wire:click="closeModal()" type="button" class="modal-close">
+                ×
+            </button>
+              <table class="modal__content">
+                <tr class="modal-inner">
+                    <th class="modal-ttl">お名前</th>
+                    <td class="modal-data">
+                        {{ $contact_modal['last_name'] }}
+                        <span class="space"></span>
+                        <span class="firstName">{{ $contact_modal['first_name'] }}</span>
+                    </td>
+                </tr>
+                <tr class="modal-inner">
+                    <th class="modal-ttl">性別</th>
+                    <td class="modal-data">
+                        <input type="hidden" value="{{ $contact_modal['gender'] }}" />
+                        <?php
+                        if ($contact_modal['gender'] == '1') {
+                            echo '男性';
+                        } elseif ($contact_modal['gender'] == '2') {
+                            echo '女性';
+                        } else {
+                            echo 'その他';
+                        }
+                        ?>
+                    </td>
+                </tr>
+                <tr class="modal-inner">
+                    <th class="modal-ttl">メールアドレス</th>
+                    <td class="modal-data">{{ $contact_modal['email'] }}</td>
+                </tr>
+                <tr class="modal-inner">
+                    <th class="modal-ttl">電話番号</th>
+                    <td class="modal-data">{{ $contact_modal['tel'] }}</td>
+                </tr>
+                <tr class="modal-inner">
+                    <th class="modal-ttl">住所</th>
+                    <td class="modal-data">{{ $contact_modal['address'] }}</td>
+                </tr>
+                <tr class="modal-inner">
+                    <th class="modal-ttl">建物名</th>
+                    <td class="modal-data">{{ $contact_modal['building'] }}</td>
+                </tr>
+                <tr class="modal-inner">
+                    <th class="modal-ttl">お問い合わせの種類</th>
+                    <td class="modal-data">{{ $contact_modal['category']['content'] }}</td>
+                </tr>
+                <tr class="modal-inner">
+                    <th class="modal-ttl--last">お問い合わせ内容</th>
+                    <td class="modal-data--last">
+                        {{ $contact_modal['detail']}}
+                    </td>
+                </tr>
+              </table>
+              <form class="delete-form" action="/delete" method="post">
+                @method('delete')
+                @csrf
+                <input type="hidden" name="id" value="{{ $contact_modal['id'] }}" />
+                <button class="delete-btn">削除</button>
+              </form>
+          </div>
+      </div>
     @endif
 </div>

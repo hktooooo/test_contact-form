@@ -98,9 +98,15 @@
         </div>
         <div class="form__error">
           <!-- バリデーション機能 -->
-          @error('tel')
-            {{ $message }}
-          @enderror
+          @if ($errors->has('tel_first'))
+            {{ $errors->first('tel_first') }}</>
+          @endif
+          @if (!$errors->has('tel_first') && $errors->has('tel_second'))
+            {{ $errors->first('tel_second') }}</>
+          @endif
+          @if (!$errors->has('tel_first') && !$errors->has('tel_second') && $errors->has('tel_third'))
+            {{ $errors->first('tel_third') }}</>
+          @endif
         </div>
       </div>
     </div>
@@ -123,12 +129,12 @@
       </div>
     </div>
     <!-- 建物名 -->
-    <div class="form__group">
+    <div class="form__group-building">
       <div class="form__group-title">
         <span class="form__label--item">建物名</span>
       </div>
       <div class="form__group-content">
-        <div class="form__input--text">
+        <div class="form__input--text-building">
           <input type="text" name="building" placeholder="例: 千駄ヶ谷マンション101" value="{{ old('building') }}" />
         </div>
       </div>
@@ -142,6 +148,7 @@
       <div class="form__group-content">
         <div class="form__input--text">
           <select class="form__input--category" name="category_id">
+            <option value="">選択してください</option>
             @foreach ($categories as $category)
               <option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
             @endforeach
@@ -159,6 +166,7 @@
     <div class="form__group">
       <div class="form__group-title">
         <span class="form__label--item">お問い合わせ内容</span>
+        <span class="form__label--required">※</span>
       </div>
       <div class="form__group-content">
         <div class="form__input--textarea">

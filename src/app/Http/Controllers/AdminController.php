@@ -13,39 +13,31 @@ class AdminController extends Controller
     //
     public function admin()
     {
-        $contacts = Contact::Paginate(7);
-        $categories = Category::all();
-
-        $name_email = "";
-        $gender     = "";
-        $category_id = "";   
-        $date       = "";
-
-        return view('admin', compact('contacts', 'categories'));
+        return view('admin');
     }
 
-    public function search(Request $request)
-    {
-        // フォームからの入力を取得
-        $name_email = $request->input('name_email');
-        $gender     = $request->input('gender');
-        $category_id = $request->input('category_id');   
-        $date       = $request->input('date');
+    // public function search(Request $request)
+    // {
+    //     // フォームからの入力を取得
+    //     $name_email = $request->input('name_email');
+    //     $gender     = $request->input('gender');
+    //     $category_id = $request->input('category_id');   
+    //     $date       = $request->input('date');
 
-        // 検索実行
-        $contacts = Contact::with('category')->KeywordSearch($name_email, $gender, $category_id, $date)->paginate(7);
+    //     // 検索実行
+    //     $contacts = Contact::with('category')->KeywordSearch($name_email, $gender, $category_id, $date)->paginate(7);
 
-        $categories = Category::all();
+    //     $categories = Category::all();
 
-        return view('admin', compact(
-            'contacts',
-            'categories',
-            'name_email',
-            'gender',
-            'category_id',
-            'date'
-        ));
-    }
+    //     return view('admin', compact(
+    //         'contacts',
+    //         'categories',
+    //         'name_email',
+    //         'gender',
+    //         'category_id',
+    //         'date'
+    //     ));
+    // }
 
     public function exportFilteredUsers(Request $request)
     {

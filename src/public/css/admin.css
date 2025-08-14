@@ -138,15 +138,6 @@ input::placeholder {
     cursor: pointer;
 }
 
-.additional__features-pagination {
-    height: 31px;
-    width: 219px;
-    line-height: 5px;
-    box-sizing: border-box;
-    border: red solid 1px;
-    margin-top: 8px;
-}
-
 .admin-table {
     width: 100%;
 }
@@ -220,8 +211,9 @@ input::placeholder {
     cursor: pointer;
 }
 
-.additional__features-pagination_1 {
-    height: 50px;
+.additional__features-pagination {
+    height: 31px;
+    margin-top: 8px;
     width: 219px;
     box-sizing: border-box;
     border: red solid 1px;

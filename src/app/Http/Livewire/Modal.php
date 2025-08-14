@@ -18,7 +18,7 @@ class Modal extends Component
     public function openModal($id)
     {
         $this->contactId = $id;
-        $this->contact_ = Contact::with('category')->find($id);
+        $this->contact_modal = Contact::with('category')->find($id);
         $this->showModal = true;
         // dd(Contact::with('category')->find($id));
     }

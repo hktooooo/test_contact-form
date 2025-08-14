@@ -1,4 +1,4 @@
-.header-nav {
+.header__inner nav {
     display: none;
 }
 
@@ -8,12 +8,13 @@
     width: 963px;
 }
 
-.contact-form__heading {
+.contact-form__heading h2 {
     margin-bottom: 35px;
     text-align: center;
     color: #8B7969;
     font-family: "Inika", serif;
     font-weight: 400;
+    font-size: 35px;
 }
 
 .form {
@@ -26,7 +27,13 @@
     display: flex;
     justify-content: start;
     margin-bottom: 15px;
-    border: solid 2px red;
+}
+
+.form__group-building {
+    display: flex;
+    justify-content: start;
+    margin-bottom: 15px;
+    padding-bottom: 22px;
 }
 
 .form__group-title {
@@ -61,15 +68,63 @@
     width: 619px;
 }
 
-.form__input--text input,
+.form__input--text input {
+    padding: 10px;
+    width: 619px;
+    appearance: none;
+    height: 38px;
+    background-color: #F4F4F4;
+    font-size: 16px;
+    border: none;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #8B7969;
+    padding-left: 14px;
+}
+
+.form__input--text-building input {
+    padding: 10px;
+    width: 619px;
+    appearance: none;
+    height: 38px;
+    background-color: #F4F4F4;
+    font-size: 16px;
+    border: none;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #8B7969;
+    padding-left: 14px;
+}
+
 .form__input--textarea textarea {
     padding: 10px;
     width: 619px;
     appearance: none;
     height: 38px;
     background-color: #F4F4F4;
+    font-size: 16px;
+    border: none;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #8B7969;
+    padding-left: 14px;
+}
+
+.form__input--text select {
+    width: 332px;
+    appearance: none;
+    height: 38px;
+    background-color: #F4F4F4;
     font-size: 14px;
     border: none;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #8B7969;
+    padding-left: 14px;
 }
 
 .form__input--name {
@@ -86,8 +141,11 @@
     font-size: 14px;
 }
 
-input::placeholder {
+input::placeholder,
+select::placeholder {
     color: #BEB1A6;
+    padding-left: 14px;
+    font-size: 14px;
 }
 
 .form__input--radio label {
@@ -113,13 +171,18 @@ input::placeholder {
     height: 38px;
     font-size: 14px;
     text-align: center;
+    padding: 0;
+}
+
+.form__input--tel input::placeholder {
+    padding: 0;
 }
 
 .form__input--tel p {
     font-size: 20px;
     text-align: center;
-    border: #ff0000 solid 1px;
-    padding-top: 0px;
+    padding-top: 0;
+    margin-top: 0;
 }
 
 .form__input--category {
