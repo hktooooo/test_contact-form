@@ -1,16 +1,73 @@
+/*@font-face {
+     font-family: "Alphabet";
+    src: url(https://somewebsite.com/path/to/font.woff);
+    unicode-range: U+0041-005A, U+0061-007A; 
+    ---------------A-Z, a-z
+}
+
+@font-face {
+    font-family: "Alphabet";
+    src: local("Tahoma Bold");
+    font-weight: bold;
+    unicode-range: U+0041-005A, U+0061-007A;
+    --------------A-Z, a-z
+}
+*/
+
+body {
+    background: #fff;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 .header {
-    background: #000;
+    background: #fff;
+    text-align: center;
+    border-bottom: solid 1px #E0DFDE;
+    font-family: "Inika", serif;
 }
 
 .header__inner {
     margin: 0 auto;
     padding: 20px 15px;
-    max-width: 1230px;
+    width: 100%;
+    position: relative;
 }
 
 .header__logo {
-    color: #fff;
+    color: #8B7969;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 24px;
+    font-size: 40px;
+}
+
+.header__inner nav {
+    display: flex;
+    width: 100px;
+    height: 34px;
+    line-height: 34px;
+    color: #D9C6B5;
+    background-color: rgba(240, 240, 240, 0.6);
+    border: #D9C6B5 solid 1px;
+    position: absolute;
+    right: 97px;
+    top: 34px;
+    font-family: "Inika", serif;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__inner nav li {
+    width: 100px;
+    height: 34px;
+    line-height: 34px;
+}
+
+.header__inner nav li a {
+    width: 100px;
+    height: 34px;
+    line-height: 34px;
+    text-decoration: none;
+    color: #D9C6B5;
 }

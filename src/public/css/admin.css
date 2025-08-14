@@ -1,0 +1,228 @@
+body {
+    background-color: #fff;
+}
+
+.header-nav__link-login {
+    display: none;
+}
+
+.header-nav__link-register {
+    display: none;
+}
+
+.header-nav__link-logout {
+    display: block;
+    width: 100px;
+    height: 34px;
+    line-height: 34px;
+}
+
+.admin__content {
+    margin: 0 auto;
+    max-width: 1184px;
+}
+
+.admin__heading {
+    margin-top: 40px;
+    margin-bottom: 29px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    color: #8B7969;
+    font-family: "Inika", serif;
+    font-weight: 400;
+}
+
+.search-form {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 37px;
+}
+
+.search-form__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 917px;
+}
+
+.search-form__item-input {
+    display: block;
+    height: 50px;
+    width: 347px;
+    border: #E3DED9 solid 1px;
+    box-sizing: border-box;
+    background-color: #FBFBFB;
+    padding-left: 19.5px;
+}
+
+input::placeholder {
+    color: #BEB1A6;
+    font-size: 16px;
+}
+
+.search-form__item-select-gender {
+    display: block;
+    height: 50px;
+    width: 102px;
+    border: #E3DED9 solid 1px;
+    box-sizing: border-box;
+    background-color: #F4F4F4;
+    color: #8B7969;
+    font-size: 17px;
+    padding-left: 22px;
+}
+
+.search-form__item-select-category {
+    display: block;
+    height: 50px;
+    width: 223px;
+    border: #E3DED9 solid 1px;
+    box-sizing: border-box;
+    background-color: #F4F4F4;
+    color: #8B7969;
+    font-size: 17px;
+    padding-left: 22px;
+}
+
+.search-form__item-select-date {
+    display: block;
+    height: 50px;
+    width: 149px;
+    border: #E3DED9 solid 1px;
+    box-sizing: border-box;
+    background-color: #F4F4F4;
+    color: #8B7969;
+    font-size: 17px;
+}
+
+.search-form__button button {
+    display: block;
+    width: 102.5px;
+    height: 50px;
+    color: #fff;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.search-form__button-submit {
+    background-color: #82756A;
+    border: #8B7969 solid 1px;
+}
+
+.search-form__button-reset {
+    background-color: #D9C6B5;
+    border: #D9C6B5 solid 1px;
+}
+
+.admin__additional__features {
+    border: blue 1px solid;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 23px;
+}
+
+.additional__features__button button {
+    display: block;
+    width: 148px;
+    height: 39px;
+    color: #8B7969;
+    box-sizing: border-box;
+    background-color: rgba(225, 219, 214, 0.6);
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.additional__features-pagination {
+    height: 31px;
+    width: 219px;
+    line-height: 5px;
+    box-sizing: border-box;
+    border: red solid 1px;
+    margin-top: 8px;
+}
+
+.admin-table {
+    width: 100%;
+}
+
+.admin-table__inner {
+    font-size: 20px;
+    text-align: left;
+}
+
+.admin-table__row {
+    height: 73px;
+    border-bottom: #E0DFDE solid 1px;
+    border-right: #E0DFDE solid 1px;
+    border-left: #E0DFDE solid 1px;
+    box-sizing: border-box;
+    color: #8B7969;
+}
+
+.admin-table__row:first-child {
+    height: 59px;
+    border: none;
+}
+
+.admin-table__header {
+    height: 59px;
+    color: #fff;
+    font-weight: 700;
+    background-color: #8B7969;
+}
+
+.admin-table__header:first-child {
+    width: 5%;
+}
+
+.admin-table__header:nth-child(2) {
+    width: 15%;
+}
+
+.admin-table__header:nth-child(3) {
+    width: 13%;
+}
+
+.admin-table__header:nth-child(4) {
+    width: 24%;
+}
+
+.admin-table__header:nth-child(5) {
+    width: 32%;
+}
+
+.admin-table__header:nth-child(6) {
+    width: 11%;
+}
+
+.admin-table__item:nth-child(4) {
+    font-family: "Inika", serif;
+}
+
+.admin-table__item:nth-child(5) {
+    font-size: 18px;
+}
+
+.admin-form__button button {
+    display: block;
+    background-color: rgba(244, 244, 244, 0.3);
+    border: rgba(217, 198, 181, 0.6);
+    width: 76px;
+    height: 39px;
+    color: #D9C6B5;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.additional__features-pagination_1 {
+    height: 50px;
+    width: 219px;
+    box-sizing: border-box;
+    border: red solid 1px;
+}

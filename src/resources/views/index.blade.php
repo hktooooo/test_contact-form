@@ -7,73 +7,173 @@
 @section('content')
 <div class="contact-form__content">
   <div class="contact-form__heading">
-    <h2>お問い合わせ</h2>
+    <h2>Contact</h2>
   </div>
-  <form class="form" action="/contacts/confirm" method="post">
+  <form class="form" action="/confirm" method="post">
   @csrf
+    <!-- 名前 -->
     <div class="form__group">
       <div class="form__group-title">
         <span class="form__label--item">お名前</span>
-        <span class="form__label--required">必須</span>
+        <span class="form__label--required">※</span>
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <input type="text" name="name" placeholder="テスト太郎" value="{{ old('name') }}" />
+          <div class="form__input--name">
+            <input type="text" name="last_name" placeholder="例: 山田" value="{{ old('last_name') }}" />
+            <input type="text" name="first_name" placeholder="例: 太郎" value="{{ old('first_name') }}" />
+          </div>
         </div>
         <div class="form__error">
-          <!--バリデーション機能を実装したら記述します。-->
-          @error('name')
-          {{ $message }}
+          <!-- バリデーション機能 -->
+          @error('last_name')
+            {{ $message }}
+          @enderror
+        </div>
+        <div class="form__error">
+          <!-- バリデーション機能 -->
+          @error('first_name')
+            {{ $message }}
           @enderror
         </div>
       </div>
     </div>
+    <!-- 性別 -->
+    <div class="form__group">
+      <div class="form__group-title">
+        <span class="form__label--item">性別</span>
+        <span class="form__label--required">※</span>
+      </div>
+      <div class="form__group-content">
+        <div class="form__input--radio">
+          <label>
+            <input type="radio" name="gender" value=1>男性
+          </label>
+          <label>
+            <input type="radio" name="gender" value=2>女性
+          </label>
+          <label>
+            <input type="radio" name="gender" value=3>その他
+          </label>
+        </div>
+        <div class="form__error">
+          <!-- バリデーション機能 -->
+          @error('gender')
+            {{ $message }}
+          @enderror
+        </div>
+      </div>
+    </div>
+    <!-- メールアドレス -->
     <div class="form__group">
       <div class="form__group-title">
         <span class="form__label--item">メールアドレス</span>
-        <span class="form__label--required">必須</span>
+        <span class="form__label--required">※</span>
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <input type="text" name="email" placeholder="test@example.com" value="{{ old('email') }}" />
+          <input type="text" name="email" placeholder="例: test@example.com" value="{{ old('email') }}" />
         </div>
         <div class="form__error">
-          <!--バリデーション機能を実装したら記述します。-->
+          <!-- バリデーション機能 -->
           @error('email')
-          {{ $message }}
+            {{ $message }}
           @enderror
         </div>
       </div>
     </div>
+    <!-- 電話番号 -->
     <div class="form__group">
       <div class="form__group-title">
         <span class="form__label--item">電話番号</span>
-        <span class="form__label--required">必須</span>
+        <span class="form__label--required">※</span>
       </div>
       <div class="form__group-content">
-        <div class="form__input--text">
-          <input type="tel" name="tel" placeholder="09012345678" value="{{ old('tel') }}" />
+        <div class="form__input--text form__input--tel">
+          <input type="tel" name="tel_first" placeholder="080" value="{{ old('tel_first') }}" />
+          <p>-</p>
+          <input type="tel" name="tel_second" placeholder="1234" value="{{ old('tel_second') }}" />
+          <p>-</p>
+          <input type="tel" name="tel_third" placeholder="5678" value="{{ old('tel_third') }}" />
         </div>
         <div class="form__error">
-          <!--バリデーション機能を実装したら記述します。-->
+          <!-- バリデーション機能 -->
           @error('tel')
-          {{ $message }}
+            {{ $message }}
           @enderror
         </div>
       </div>
     </div>
+    <!-- 住所 -->
+    <div class="form__group">
+      <div class="form__group-title">
+        <span class="form__label--item">住所</span>
+        <span class="form__label--required">※</span>
+      </div>
+      <div class="form__group-content">
+        <div class="form__input--text">
+          <input type="text" name="address" placeholder="例: 東京都渋谷区千駄ヶ谷1-2-3" value="{{ old('address') }}" />
+        </div>
+        <div class="form__error">
+          <!-- バリデーション機能 -->
+          @error('address')
+            {{ $message }}
+          @enderror
+        </div>
+      </div>
+    </div>
+    <!-- 建物名 -->
+    <div class="form__group">
+      <div class="form__group-title">
+        <span class="form__label--item">建物名</span>
+      </div>
+      <div class="form__group-content">
+        <div class="form__input--text">
+          <input type="text" name="building" placeholder="例: 千駄ヶ谷マンション101" value="{{ old('building') }}" />
+        </div>
+      </div>
+    </div>
+    <!-- お問い合わせの種類 -->
+    <div class="form__group">
+      <div class="form__group-title">
+        <span class="form__label--item">お問い合わせの種類</span>
+        <span class="form__label--required">※</span>
+      </div>
+      <div class="form__group-content">
+        <div class="form__input--text">
+          <select class="form__input--category" name="category_id">
+            @foreach ($categories as $category)
+              <option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
+            @endforeach
+          </select>
+        </div>
+        <div class="form__error">
+          <!-- バリデーション機能 -->
+          @error('category_id')
+            {{ $message }}
+          @enderror
+        </div>
+      </div>
+    </div>
+    <!-- お問い合わせ内容 -->
     <div class="form__group">
       <div class="form__group-title">
         <span class="form__label--item">お問い合わせ内容</span>
       </div>
       <div class="form__group-content">
         <div class="form__input--textarea">
-          <textarea name="content" placeholder="資料をいただきたいです"></textarea>
+          <textarea name="detail" placeholder="お問い合わせ内容をご記載ください"></textarea>
+        </div>
+        <div class="form__error">
+          <!-- バリデーション機能 -->
+          @error('detail')
+            {{ $message }}
+          @enderror
         </div>
       </div>
     </div>
     <div class="form__button">
-      <button class="form__button-submit" type="submit">送信</button>
+      <button class="form__button-submit" type="submit">確認画面</button>
     </div>
   </form>
 </div>
