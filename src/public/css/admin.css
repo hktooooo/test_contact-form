@@ -96,7 +96,6 @@ input::placeholder {
     background-color: #F4F4F4;
     color: #8B7969;
     font-size: 17px;
-    padding-left: 22px;
 }
 
 .search-form__button button {
@@ -219,4 +218,11 @@ input::placeholder {
     color: #D9C6B5;
     font-size: 18px;
     cursor: pointer;
+}
+
+.additional__features-pagination_1 {
+    height: 50px;
+    width: 219px;
+    box-sizing: border-box;
+    border: red solid 1px;
 }

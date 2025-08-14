@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  @livewireStyles
 </head>
 
 <body>
@@ -25,7 +26,12 @@
           <li class="header-nav__item">
             <a class="header-nav__link-register" href="/register">register</a>
             <a class="header-nav__link-login" href="/login">login</a>
-            <a class="header-nav__link-logout" href="/login">logout</a>
+            @if (Auth::check())
+            <form action="/logout" method="post">
+              @csrf
+              <button class="header-nav__link-logout">logout</button>
+            </form>
+            @endif
           </li>
         </ul>
       </nav>
@@ -35,6 +41,7 @@
   <main>
     @yield('content')
   </main>
+  @livewireScripts
 </body>
 
 </html>

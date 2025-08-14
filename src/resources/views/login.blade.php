@@ -9,7 +9,7 @@
   <div class="login__heading">
     <h2>Login</h2>
   </div>
-  <form class="form" action="/confirm" method="post">
+  <form class="form" action="/login" method="post">
   @csrf
     <!-- メールアドレス -->
     <div class="form__group">
@@ -18,13 +18,13 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <input type="text" name="email" placeholder="例: test@example.com" value="{{ old('email') }}" />
+          <input type="email" name="email" placeholder="例: test@example.com" value="{{ old('email') }}" />
         </div>
         <div class="form__error">
-          <!--バリデーション機能を実装したら記述します。-->
-
-
-
+          <!-- バリデーション機能 -->
+          @error('email')
+            {{ $message }}
+          @enderror
         </div>
       </div>
     </div>
@@ -38,10 +38,10 @@
           <input type="password" name="password" placeholder="例: coachtech1106" value="{{ old('password') }}" />
         </div>
         <div class="form__error">
-          <!--バリデーション機能を実装したら記述します。-->
-
-
-
+          <!-- バリデーション機能 -->
+          @error('email')
+            {{ $message }}
+          @enderror
         </div>
       </div>
     </div>
