@@ -36,6 +36,7 @@ class Contact extends Model
             ->when(!empty($filters['name_email']), function ($q) use ($filters) {
                 $q->where(function ($sub) use ($filters) {
                     $sub->where('first_name', 'like', "%{$filters['name_email']}%")
+                        ->orWhere('last_name', 'like', "%{$filters['name_email']}%")
                         ->orWhere('email', 'like', "%{$filters['name_email']}%");
                 });
             })

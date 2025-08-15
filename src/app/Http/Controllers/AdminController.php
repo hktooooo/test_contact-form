@@ -53,6 +53,13 @@ class AdminController extends Controller
         ));
     }
 
+    public function destroy(Request $request)
+    {
+        // 削除実行
+        Contact::find($request->id)->delete();
+        return redirect('/admin');
+    }
+
     public function exportFilteredUsers(Request $request)
     {
         // フォームからの入力を取得
