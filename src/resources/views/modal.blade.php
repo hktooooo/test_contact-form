@@ -1,7 +1,5 @@
-<head>
-    @livewireStyles
-</head>
-<body>
-    @livewire('modal')
-    @livewireScripts
-</body>
+@extends('admin')
+
+@section('modal')
+
+@endsection

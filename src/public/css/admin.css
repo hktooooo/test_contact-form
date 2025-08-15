@@ -200,12 +200,14 @@ input::placeholder {
     font-size: 18px;
 }
 
-.admin-form__button button {
+a.admin-form__button-modal-open {
     display: block;
     background-color: rgba(244, 244, 244, 0.3);
     border: rgba(217, 198, 181, 0.6);
     width: 76px;
     height: 39px;
+    line-height: 39px;
+    text-align: center;
     color: #D9C6B5;
     font-size: 18px;
     cursor: pointer;
