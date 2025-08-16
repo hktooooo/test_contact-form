@@ -61,8 +61,10 @@ class ContactController extends Controller
                 'old_tel_second' => $contact['tel_second'],
                 'old_tel_third' => $contact['tel_third'],         
                 'old_address' => $contact['address'],    
-                'old_building' => $contact['building'],    
-                'old_detail' => $contact['detail'], 
+                'old_building' => $contact['building'],
+                'old_category_id' => $contact['category_id'],
+                'old_category_content' => $category['content'],
+                'old_detail' => $contact['detail'],
                 ]
             );
 

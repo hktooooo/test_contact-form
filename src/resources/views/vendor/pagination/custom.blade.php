@@ -68,6 +68,7 @@
             font-size: 18px;
             transform: translateX(-2.6px);
         }
+
     </style>
 </head>
 
@@ -76,7 +77,7 @@
         {{-- Previous Page Link --}}
             <!-- 前のページへのリンク -->
             <li class="page-item--first {{ $paginator->onFirstPage() ? ' disabled' : '' }}">
-                <a class="page-link" href="{{ $paginator->previousPageUrl() }}">&lsaquo;</a>
+                <a class="page-link page-link--prev" href="{{ $paginator->appends(request()->query())->previousPageUrl() }}">&lsaquo;</a>
             </li>
 
         {{-- Pagination Elemnts --}}
@@ -111,14 +112,14 @@
                 @if ($i == $paginator->currentPage())
                     <li class="page-item active"><span class="page-link">{{ $i }}</span></li>
                 @else
-                    <li class="page-item"><a class="page-link" href="{{ $paginator->url($i) }}">{{ $i }}</a></li>
+                    <li class="page-item"><a class="page-link" href="{{ $paginator->appends(request()->query())->url($i) }}">{{ $i }}</a></li>
                 @endif
             @endfor
 
         {{-- Next Page Link --}}
             <!-- 次のページへのリンク -->
             <li class="page-item--last {{ $paginator->currentPage() == $paginator->lastPage() ? ' disabled' : '' }}">
-                <a class="page-link" href="{{ $paginator->nextPageUrl() }}">&rsaquo;</a>
+                <a class="page-link page-link--next" href="{{ $paginator->appends(request()->query())->nextPageUrl() }}">&rsaquo;</a>
             </li>
     </ul>
 @endif

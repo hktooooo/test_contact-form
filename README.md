@@ -8,7 +8,7 @@ Dockerビルド
 1. git clone \*\*\*
 2. docker-compose up -d -build
 
-*MySQLは、OSによって起動しない場合があるのでそれぞれのPCに合わせて docker-compose.ymlファイルを編集してください。
+※MySQLは、OSによって起動しない場合があるのでそれぞれのPCに合わせて docker-compose.ymlファイルを編集してください。
 
 Laravel環境構築
 1. docker-compose exec php bash
@@ -28,13 +28,13 @@ Laravel環境構築
 
 
 ## 使用技術(実行環境)
-・PHP 8.1
-・Laravel 8.83
-・MySQL:8.0
+・PHP 8.1<br>
+・Laravel 8.83<br>
+・MySQL:8.0<br>
 
 ## ER図
 ![alt text](image.png)
 
 ## URL
-・開発環境：http://localhost/
+・開発環境：http://localhost/<br>
 ・phpMyAdmin：http://localhost:8080/
