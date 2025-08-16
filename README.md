@@ -33,10 +33,7 @@ Laravel環境構築
 ・MySQL:8.0
 
 ## ER図
-
-< - - - 作成したER図の画像 - - - >
-
-
+![alt text](image.png)
 
 ## URL
 ・開発環境：http://localhost/
