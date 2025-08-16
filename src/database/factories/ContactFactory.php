@@ -14,10 +14,6 @@ class ContactFactory extends Factory
      */
     public function definition()
     {
-        // 住所
-        $prefecture = $this->faker->prefecture;
-        $city = $this->faker->city;
-
         // 詳細
         $detail = "届いた商品が注文した商品ではありませんでした。商品の交換をお願いします。";
 
@@ -28,8 +24,8 @@ class ContactFactory extends Factory
             'last_name' => $this->faker->lastname,
             'gender' => $this->faker->numberBetween(1,3),
             'email' => $this->faker->unique()->safeEmail,
-            'tel' => $this->faker->phoneNumber,
-            'address' => "{$prefecture} {$city}",
+            'tel' => $this->faker->numerify($this->faker->randomElement(['070', '080', '090']) . '########'),
+            'address' => $this->faker->address
             'building' => $this->faker->secondaryAddress,
             'detail' => "{$detail}"
         ];
