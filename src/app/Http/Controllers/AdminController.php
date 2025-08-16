@@ -11,17 +11,31 @@ use App\Models\Category;
 class AdminController extends Controller
 {
     //
-    public function admin()
+    public function admin(Request $request)
     {
         $contacts = Contact::with('category')->Paginate(7);
         $categories = Category::all();
 
-        $name_email = "";
-        $gender     = "";
-        $category_id = "";   
-        $date       = "";
+        $name_email  = $request->input('name_email');
+        $gender      = $request->input('gender');
+        $category_id = $request->input('category_id');
+        $date        = $request->input('date');
 
-        return view('admin', compact('contacts', 'categories'));
+        if (empty($request)) {
+            $name_email = "";
+            $gender     = "";
+            $category_id = "";
+            $date       = "";
+        };
+
+        return view('admin', compact(
+            'contacts',
+            'categories',
+            'name_email',
+            'gender',
+            'category_id',
+            'date'
+        ));
     }
 
     public function search(Request $request)
@@ -120,10 +134,6 @@ class AdminController extends Controller
 
         Storage::put($path, $csv);
 
-        return response()->json([
-            'message' => 'CSV with all fields saved',
-            'path' => $path,
-            'url' => Storage::url($path),
-        ]);
+        return redirect('admin');
     }
 }

@@ -5,6 +5,9 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ModalController;
 
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\CustomLoginRequest;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,4 +28,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/search', [AdminController::class, 'search']);
     Route::delete('/delete', [AdminController::class, 'destroy']);
     Route::get('/admin/export-users', [AdminController::class, 'exportFilteredUsers'])->name('users.export');
+});
+
+Route::post('/login', function (CustomLoginRequest $request) {
+    $credentials = $request->only('email', 'password');
+
+    if (Auth::attempt($credentials)) {
+        $request->session()->regenerate();
+        return redirect()->intended('/admin');
+    }
+
+    return back()->withErrors([
+        'email' => '認証に失敗しました。',
+    ]);
 });

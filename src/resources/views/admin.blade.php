@@ -16,12 +16,12 @@
         <form class="search-form" action="/admin/search" method="get">
         @csrf
         <div class="search-form__item">
-            <input class="search-form__item-input" type="text" name="name_email" placeholder="名前やメールアドレスを入力してください"/>
+            <input class="search-form__item-input" type="text" name="name_email" value="{{ $name_email ?? '' }}" placeholder="名前やメールアドレスを入力してください"/>
             <select class="search-form__item-select-gender" name="gender">
                 <option value="">性別</option>
-                <option value=1>男性</option>
-                <option value=2>女性</option>
-                <option value=3>その他</option>
+                <option value="1" {{ old('gender', $gender) === '1' ? 'selected' : '' }}>男性</option>
+                <option value="2" {{ old('gender', $gender) === '2' ? 'selected' : '' }}>女性</option>
+                <option value="3" {{ old('gender', $gender) === '3' ? 'selected' : '' }}>その他</option>
             </select>
             <select class="search-form__item-select-category" name="category_id">
                 <option value="">お問い合わせの種類</option>
@@ -76,7 +76,7 @@
             @foreach ($contacts as $contact)
             <tr class="admin-table__row">
                 <td class="admin-table__item"></td>
-                <td class="admin-table__item">{{ $contact['first_name'] }}</td>
+                <td class="admin-table__item">{{ $contact['last_name'] }}　{{ $contact['first_name'] }}</td>
                 <td class="admin-table__item">
                     @switch( $contact['gender'] )
                         @case(1)
