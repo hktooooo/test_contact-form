@@ -10,7 +10,14 @@ body {
     display: none;
 }
 
-.register__heading {
+.header-nav__link-login {
+    display: block;
+    width: 100px;
+    height: 34px;
+    line-height: 34px;
+}
+
+.register__heading h2 {
     margin-top: 56px;
     margin-bottom: 56px;
     height: 46px;
@@ -25,17 +32,18 @@ body {
 .form {
     margin: 0 auto;
     width: 736px;
-    height: 579px;
-    padding-top: 51px;
+    height: 644px;
+    padding-top: 22px;
     border: solid 1px #C5B9B0;
     box-sizing: border-box;
     background-color: #FFFFFF;
+    border-radius: 10px;
 }
 
 .form__group {
     width: 445px;
     height: 102px;
-    margin: 47px auto 0 auto;
+    margin: 45px auto 0 auto;
     box-sizing: border-box;
 }
 
@@ -43,7 +51,7 @@ body {
     width: 100%;
     text-align: left;
     margin-right: 10px;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
 }
 
 .form__label--item {
@@ -68,16 +76,23 @@ body {
     appearance: none;
     height: 50px;
     background-color: #F4F4F4;
-    font-size: 14px;
+    font-size: 16px;
     border: none;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #8B7969;
+    padding-left: 14px;
 }
 
 input::placeholder {
     color: #BEB1A6;
+    padding-left: 14px;
+    font-size: 14px;
 }
 
 .form__button {
-    margin-top: 95px;
+    margin-top: 63px;
     width: 100%;
     text-align: center;
 }

@@ -26,6 +26,7 @@ body {
     text-align: center;
     border-bottom: solid 1px #E0DFDE;
     font-family: "Inika", serif;
+    font-weight: 400;
 }
 
 .header__inner {
@@ -56,6 +57,7 @@ body {
     text-align: center;
     align-items: center;
     justify-content: center;
+    font-size: 20px;
 }
 
 .header__inner nav li {
@@ -70,4 +72,41 @@ body {
     line-height: 34px;
     text-decoration: none;
     color: #D9C6B5;
+    font-size: 20px;
+    font-family: "Inika", serif;
+}
+
+.header__inner nav li form button {
+    width: 100px;
+    height: 34px;
+    line-height: 34px;
+    text-decoration: none;
+    color: #D9C6B5;
+    background-color: rgba(240, 240, 240, 0.6);
+    border: #D9C6B5 solid 1px;
+    font-size: 20px;
+    font-family: "Inika", serif;
+    cursor: pointer;
+}
+
+select {
+    appearance: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 0;
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+    height: 50px;
+    width: 180px;
+}
+
+input[type="date"] {
+    padding-left: 10px;
 }

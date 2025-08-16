@@ -11,29 +11,33 @@ use App\Models\Category;
 class AdminController extends Controller
 {
     //
-    public function admin()
+    // public function admin()
+    // {
+    //     $contacts = Contact::with('category')->Paginate(7);
+    //     $categories = Category::all();
+
+    //     return view('admin', compact(
+    //         'contacts',
+    //         'categories',
+    //     ));
+    // }
+
+    public function admin(Request $request)
     {
-        $contacts = Contact::Paginate(7);
-        $categories = Category::all();
-
-        $name_email = "";
-        $gender     = "";
-        $category_id = "";   
-        $date       = "";
-
-        return view('admin', compact('contacts', 'categories'));
-    }
-
-    public function search(Request $request)
-    {
-        // フォームからの入力を取得
+        // フォームからの入力を取得しまとめる
         $name_email = $request->input('name_email');
         $gender     = $request->input('gender');
         $category_id = $request->input('category_id');   
         $date       = $request->input('date');
+        $filters = [
+            'name_email'  => $name_email,
+            'gender'      => $gender,
+            'category_id' => $category_id,
+            'date'        => $date,
+        ];
 
         // 検索実行
-        $contacts = Contact::with('category')->KeywordSearch($name_email, $gender, $category_id, $date)->paginate(7);
+        $contacts = Contact::with('category')->KeywordSearch($filters)->paginate(7);
 
         $categories = Category::all();
 
@@ -45,6 +49,13 @@ class AdminController extends Controller
             'category_id',
             'date'
         ));
+    }
+
+    public function destroy(Request $request)
+    {
+        // 削除実行
+        Contact::find($request->id)->delete();
+        return redirect('/admin');
     }
 
     public function exportFilteredUsers(Request $request)
@@ -107,10 +118,6 @@ class AdminController extends Controller
 
         Storage::put($path, $csv);
 
-        return response()->json([
-            'message' => 'CSV with all fields saved',
-            'path' => $path,
-            'url' => Storage::url($path),
-        ]);
+        return redirect('admin');
     }
 }

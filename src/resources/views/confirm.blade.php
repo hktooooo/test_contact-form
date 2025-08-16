@@ -1,4 +1,4 @@
-@dump($content)
+<!-- @dump($content) -->
 
 @extends('layouts.app')
 
@@ -19,8 +19,9 @@
         <tr class="confirm-table__row">
           <th class="confirm-table__header">お名前</th>
           <td class="confirm-table__text">
-            <input class="confirm-table__text-name" type="text" name="last_name" value="{{ $last_name }}" readonly />
-            <input class="confirm-table__text-name" type="text" name="first_name" value="{{ $first_name }}" readonly />
+            <p class="confirm-table__text-name">{{ $last_name }}　{{ $first_name }}</p>
+            <input type="hidden" name="last_name" value="{{ $last_name }}" />
+            <input type="hidden" name="first_name" value="{{ $first_name }}" />
           </td>
         </tr>
         <tr class="confirm-table__row">
@@ -43,13 +44,13 @@
         </tr>
         <tr class="confirm-table__row">
           <th class="confirm-table__header">メールアドレス</th>
-          <td class="confirm-table__text">
+          <td class="confirm-table__text confirm-table__text-email">
             <input type="email" name="email" value="{{ $email }}" readonly />
           </td>
         </tr>
         <tr class="confirm-table__row">
           <th class="confirm-table__header">電話番号</th>
-          <td class="confirm-table__text">
+          <td class="confirm-table__text confirm-table__text-tel">
             <input type="tel" name="tel" value="{{ $tel }}" readonly />
           </td>
         </tr>

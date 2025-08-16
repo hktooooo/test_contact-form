@@ -1,47 +1,83 @@
-<style>
-    ul {
-        list-style: none;
-        display: flex;
-        font-size: 30px;
-        box-sizing: border-box;
-        border: solid black 1px;
-        align-items: center;
-        justify-content: space-between;
-        text-align: center;
-        margin: 0;
-        padding: 0;
-    }
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 
-    li {
-        margin: 0;
-        padding: 0;
-        width: 14.2857142857143%;
-        border:blue solid 1px;
-        text-align: center;
-        box-sizing: border-box;
-    }
+    <style>
+        ul.pagination {
+            list-style: none;
+            display: flex;
+            box-sizing: border-box;
+            border: solid #E0DFDE 1px;
+            border-radius: 5px;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            font-family: "Inika", serif;
+            font-weight: 400;
+        }
 
-    a {
-        text-decoration: none;
-        color:red;
-    }
+        li.page-item {
+            margin: 0;
+            border-right: solid #E0DFDE 1px;
+            padding: 0 2px;
+            width: 32px;
+            text-align: center;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
 
-    ul.pagination li.active span {
-        background-color: #A67C52; /* 選択中のページの色 */
-        color: white;
-        font-weight: bold;
-        border: 1px solid #A67C52;
-        padding: 0 5px;
-        box-sizing: border-box;
-    }
-</style>
+        li.page-item--first {
+            margin: 0;
+            border-right: solid #E0DFDE 1px;
+            padding: 0 2px;
+            width: 32px;
+            text-align: center;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+
+        li.page-item--last {
+            margin: 0;
+            padding: 0 2px;
+            width: 32px;
+            text-align: center;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+
+        a.page-link  {
+            text-decoration: none;
+            color: #8B7969;
+            width: 32px;
+            display: inline-block;
+            text-align: center;
+            padding-right: 6px;
+        }
+            
+        ul.pagination li.active span {
+            background-color: #8B7969; /* 選択中のページの色 */
+            color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            width: 33px;
+            box-sizing: border-box;
+            font-size: 18px;
+            transform: translateX(-2.6px);
+        }
+
+    </style>
+</head>
 
 @if ($paginator->hasPages())
     <ul class="pagination" role="navigation">
         {{-- Previous Page Link --}}
             <!-- 前のページへのリンク -->
-            <li class="page-item {{ $paginator->onFirstPage() ? ' disabled' : '' }}">
-                <a class="page-link" href="{{ $paginator->previousPageUrl() }}">&lsaquo;</a>
+            <li class="page-item--first {{ $paginator->onFirstPage() ? ' disabled' : '' }}">
+                <a class="page-link page-link--prev" href="{{ $paginator->appends(request()->query())->previousPageUrl() }}">&lsaquo;</a>
             </li>
 
         {{-- Pagination Elemnts --}}
@@ -76,14 +112,14 @@
                 @if ($i == $paginator->currentPage())
                     <li class="page-item active"><span class="page-link">{{ $i }}</span></li>
                 @else
-                    <li class="page-item"><a class="page-link" href="{{ $paginator->url($i) }}">{{ $i }}</a></li>
+                    <li class="page-item"><a class="page-link" href="{{ $paginator->appends(request()->query())->url($i) }}">{{ $i }}</a></li>
                 @endif
             @endfor
 
         {{-- Next Page Link --}}
             <!-- 次のページへのリンク -->
-            <li class="page-item {{ $paginator->currentPage() == $paginator->lastPage() ? ' disabled' : '' }}">
-                <a class="page-link" href="{{ $paginator->nextPageUrl() }}">&rsaquo;</a>
+            <li class="page-item--last {{ $paginator->currentPage() == $paginator->lastPage() ? ' disabled' : '' }}">
+                <a class="page-link page-link--next" href="{{ $paginator->appends(request()->query())->nextPageUrl() }}">&rsaquo;</a>
             </li>
     </ul>
 @endif
