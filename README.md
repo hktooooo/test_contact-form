@@ -1,7 +1,6 @@
 # アプリケーション名
 お問い合わせフォーム
 
-
 ## 環境構築
 
 Dockerビルド
@@ -38,3 +37,5 @@ Laravel環境構築
 ## URL
 ・開発環境：http://localhost/<br>
 ・phpMyAdmin：http://localhost:8080/
+
+※Adminのエクスポートは、src/storage/app/exportsフォルダにCSVファイルが保存されます

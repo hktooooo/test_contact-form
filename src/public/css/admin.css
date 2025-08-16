@@ -232,13 +232,13 @@ input::placeholder {
 }
 
 .admin-form__button {
-    width: 80px;
+    width: 76px;
 }
 
 a.admin-form__button-modal-open {
     display: block;
     background-color: rgba(244, 244, 244, 0.3);
-    border: rgba(217, 198, 181, 0.6);
+    border: solid 1px rgba(217, 198, 181, 0.6);
     width: 76px;
     height: 39px;
     line-height: 39px;

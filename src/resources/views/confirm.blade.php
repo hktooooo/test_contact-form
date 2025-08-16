@@ -10,7 +10,7 @@
 
 <div class="confirm__content">
   <div class="confirm__heading">
-    <h2>Contact</h2>
+    <h2>Confirm</h2>
   </div>
   <form class="form" action="/thanks" method="post">
   @csrf
