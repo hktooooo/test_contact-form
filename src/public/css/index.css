@@ -37,7 +37,7 @@
 }
 
 .form__group-title {
-    width: 300px;
+    width: 292px;
     text-align: left;
     margin-right: 10px;
 }
@@ -209,4 +209,83 @@ select::placeholder {
     background: #82756A;
     color: #fff;
     cursor: pointer;
+}
+
+.form__input--text--select {
+    position: relative;
+}
+
+.form__input--text--select::after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    right: 22px;
+    border-right: 14px solid transparent;
+    border-left: 14px solid transparent;
+    border-top: 14px solid #BEB1A6;
+    border-bottom: 0;
+    pointer-events: none;
+}
+
+.form__input--radio {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    gap: 10px;
+    padding: 0 0 0 15px;
+}
+
+.form__input--radio input[type="radio"] {
+    position: absolute;
+    white-space: nowrap;
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+}
+
+.form__input--radio label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.form__input--radio label::before,
+.form__input--radio label::after {
+    content: "";
+    display: inline-block;
+    aspect-ratio: 1 / 1;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transition: .1s;
+}
+
+.form__input--radio label::before {
+    transform: translateY(-50%);
+    border: 1px solid #8B7969;
+}
+
+.form__input--radio label::after {
+    transform: translateY(-50%) scale(0);
+    background-color: #8B7969;
+}
+
+.form__input--radio input[type="radio"]:checked+label::before {
+    border-color: #8B7969;
+}
+
+.form__input--radio input[type="radio"]:checked+label::after {
+    transform: translateY(-50%) scale(1);
+    opacity: 1;
+}
+
+.form__input--radio li {
+    list-style: none;
 }

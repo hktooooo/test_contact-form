@@ -62,6 +62,21 @@ body {
     box-sizing: border-box;
     background-color: #FBFBFB;
     padding-left: 19.5px;
+    font-size: 17px;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #8B7969;
+    padding-left: 14px;
+}
+
+.form__input--text input {
+    font-size: 17px;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #8B7969;
+    padding-left: 14px;
 }
 
 input::placeholder {
@@ -149,7 +164,7 @@ input::placeholder {
 }
 
 .admin-table {
-    width: 100%;
+    width: 1184px;
 }
 
 .admin-table__inner {
@@ -179,27 +194,29 @@ input::placeholder {
 }
 
 .admin-table__header:first-child {
-    width: 5%;
+    width: 59px;
+    border-left: solid 1px #8B7969;
 }
 
 .admin-table__header:nth-child(2) {
-    width: 15%;
+    width: 178px;
 }
 
 .admin-table__header:nth-child(3) {
-    width: 13%;
+    width: 154px;
 }
 
 .admin-table__header:nth-child(4) {
-    width: 24%;
+    width: 284px;
 }
 
 .admin-table__header:nth-child(5) {
-    width: 32%;
+    width: 379px;
 }
 
 .admin-table__header:nth-child(6) {
-    width: 11%;
+    width: 130px;
+    border-right: solid 6px #8B7969;
 }
 
 .admin-table__item {
@@ -212,6 +229,10 @@ input::placeholder {
 
 .admin-table__item:nth-child(5) {
     font-size: 18px;
+}
+
+.admin-form__button {
+    width: 80px;
 }
 
 a.admin-form__button-modal-open {
@@ -233,4 +254,20 @@ a.admin-form__button-modal-open {
     margin-top: 8px;
     width: auto;
     box-sizing: border-box;
+}
+
+.form__input--text--select {
+    position: relative;
+}
+
+.form__input--text--select::after {
+    content: "";
+    position: absolute;
+    top: 18px;
+    right: 14px;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    border-top: 14px solid #E0DFDE;
+    border-bottom: 0;
+    pointer-events: none;
 }

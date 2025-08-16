@@ -10,11 +10,11 @@ use App\Models\Category;
 class ContactController extends Controller
 {
     //
-    public function index()
+    public function index(Request $request)
     {
         // お問い合わせの種類 一覧取得
         $categories = Category::all();
-        
+    
         return view('index', compact('categories'));
     }
 
@@ -51,6 +51,21 @@ class ContactController extends Controller
         // お問い合わせの種類 対応データ取得
         $categories = Category::all();
         $category = $categories->firstWhere('id', $contact['category_id']);
+
+        // セッションに保存
+        session(['old_first_name' => $contact['first_name'],
+                'old_last_name' => $contact['last_name'],
+                'old_gender' => $contact['gender'],
+                'old_email' => $contact['email'],
+                'old_tel_first' => $contact['tel_first'],
+                'old_tel_second' => $contact['tel_second'],
+                'old_tel_third' => $contact['tel_third'],         
+                'old_address' => $contact['address'],    
+                'old_building' => $contact['building'],    
+                'old_detail' => $contact['detail'], 
+                ]
+            );
+
 
         return view('confirm', [
             'category_id' => $contact['category_id'],

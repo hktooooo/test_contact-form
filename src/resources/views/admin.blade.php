@@ -13,30 +13,38 @@
 
     <!-- 検索フォーム -->
     <div class="search-form-wrapper">
-        <form class="search-form" action="/admin/search" method="get">
+        <form class="search-form" action="/admin" method="get">
         @csrf
         <div class="search-form__item">
-            <input class="search-form__item-input" type="text" name="name_email" value="{{ $name_email ?? '' }}" placeholder="名前やメールアドレスを入力してください"/>
-            <select class="search-form__item-select-gender" name="gender">
-                <option value="">性別</option>
-                <option value="1" {{ old('gender', $gender) === '1' ? 'selected' : '' }}>男性</option>
-                <option value="2" {{ old('gender', $gender) === '2' ? 'selected' : '' }}>女性</option>
-                <option value="3" {{ old('gender', $gender) === '3' ? 'selected' : '' }}>その他</option>
-            </select>
-            <select class="search-form__item-select-category" name="category_id">
-                <option value="">お問い合わせの種類</option>
-                @foreach ($categories as $category)
-                    <option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
-                @endforeach
-            </select>
-            <input type="date" class="search-form__item-select-date" name="date">
+            <div class="form__input--text">
+                <input class="search-form__item-input" type="text" name="name_email" value="{{ $name_email ?? '' }}" placeholder="名前やメールアドレスを入力してください"/>
+            </div>
+            <div class="form__input--text--select">
+                <select class="search-form__item-select-gender" name="gender">
+                    <option value="">性別</option>
+                    <option value="1">男性</option>
+                    <option value="2">女性</option>
+                    <option value="3">その他</option>
+                </select>
+            </div>
+            <div class="form__input--text--select">
+                <select class="search-form__item-select-category" name="category_id">
+                    <option value="">お問い合わせの種類</option>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="form__input--text--select">
+                <input type="date" class="search-form__item-select-date" name="date">
+            </div>
         </div>
         <div class="search-form__button">
             <button class="search-form__button-submit" type="submit">検索</button>
         </div>
         </form>
 
-        <form class="search-form" action="/admin/search" method="get">
+        <form class="search-form" action="/admin" method="get">
         @csrf
             <input type="hidden" name="name_email" value="">
             <input type="hidden" name="gender" value="">

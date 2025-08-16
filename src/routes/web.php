@@ -25,7 +25,7 @@ Route::post('/thanks', [ContactController::class, 'store']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [AdminController::class, 'admin']);
-    Route::get('/admin/search', [AdminController::class, 'search']);
+    // Route::get('/admin/search', [AdminController::class, 'search']);
     Route::delete('/delete', [AdminController::class, 'destroy']);
     Route::get('/admin/export-users', [AdminController::class, 'exportFilteredUsers'])->name('users.export');
 });

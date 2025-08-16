@@ -11,34 +11,18 @@ use App\Models\Category;
 class AdminController extends Controller
 {
     //
+    // public function admin()
+    // {
+    //     $contacts = Contact::with('category')->Paginate(7);
+    //     $categories = Category::all();
+
+    //     return view('admin', compact(
+    //         'contacts',
+    //         'categories',
+    //     ));
+    // }
+
     public function admin(Request $request)
-    {
-        $contacts = Contact::with('category')->Paginate(7);
-        $categories = Category::all();
-
-        $name_email  = $request->input('name_email');
-        $gender      = $request->input('gender');
-        $category_id = $request->input('category_id');
-        $date        = $request->input('date');
-
-        if (empty($request)) {
-            $name_email = "";
-            $gender     = "";
-            $category_id = "";
-            $date       = "";
-        };
-
-        return view('admin', compact(
-            'contacts',
-            'categories',
-            'name_email',
-            'gender',
-            'category_id',
-            'date'
-        ));
-    }
-
-    public function search(Request $request)
     {
         // フォームからの入力を取得しまとめる
         $name_email = $request->input('name_email');
