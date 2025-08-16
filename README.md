@@ -11,7 +11,7 @@ Dockerビルド
 
 Laravel環境構築
 1. docker-compose exec php bash
-2. compoiser install
+2. composer install
 3. .env.exampleファイルから.envを作成し、環境変数を変更
     変更項目、値  
      DB_HOST=mysql
